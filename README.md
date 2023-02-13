@@ -1,5 +1,7 @@
 # Info BDN
-Projecte elaborat per als mòduls M07 i M09 del segon curs de DAW de l'Institut la Pineda.
+Projecte modificant un treball original elaborat per als mòduls M07 i M09 del segon curs de DAW de l'Institut la Pineda.
+https://github.com/guillemfont/infobdn
+Convertint-lo en MVC.
 
 # Usuaris
 Tots els usuaris de la base de dades tenen la contrasenya '1234'.
