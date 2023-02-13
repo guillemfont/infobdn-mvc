@@ -1,6 +1,6 @@
 <nav>
 
-<a href="../sortir.php" onclick="return confirmarTancarSessio()"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+<a href="index.php?controller=alumne&action=closesession" onclick="return confirmarTancarSessio()"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
 
 <div class="lista">
 
@@ -14,7 +14,7 @@
         <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
     </li>
     <li>
-        <ul><a href="../sortir.php" onclick="return confirmarTancarSessio()"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
+        <ul><a href="index.php?controller=alumne&action=closesession" onclick="return confirmarTancarSessio()"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
     </li>
 </div>
 </nav>
@@ -24,11 +24,11 @@
 <section id="seccioAlumne">
 <div class="contingut" style="margin: 0 50px">
     <h1>Els meus cursos</h1>
-    <?php mostrarCursos(); ?>
+    <?php echo $courses; ?>
 </div>
 <div class="contingut" style="margin: 0 50px">
     <h1>Cursos disponibles</h1>
-    <?php cursosDisponibles(); ?>
+    <?php echo $disponibles ?>
 </div>
 
 </section>

@@ -10,7 +10,10 @@
     <title>Info BDN</title>
 
     <!-- Enllaç al document CSS  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Enllaç al document JS  -->
+    <script src="assets/script/script.js"></script>
 
     <!-- Enllaç a les tipografies  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +24,7 @@
     <script src="https://kit.fontawesome.com/ebca16e450.js" crossorigin="anonymous"></script>
 
 </head>
-<body background="img/fondo.jpg">
+<body background="assets/img/fondo.jpg">
     <?php
     session_start();
     require_once "autoload.php";

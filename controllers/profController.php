@@ -1,24 +1,20 @@
 <?php
 require_once "models/professor.php";
-class AlumneController
+class ProfController
 {
 
-    public function singIn(){
-    $rang = $_POST['rang'];
-    $email = $_POST['email'];
-    $pass = $_POST['contrasenya'];
-
-    $alumne = new Alumne();
-    
-    if ($rang == "alumne" && $alumne->checkAlumne($email, $pass)){
-        $_SESSION['usuari']=$email;
-
-    } else if ($rang == "professor"){
-
-    }
-    
+    public function showHome(){
+        $prof = new Professor();
+        $dni = $prof->dniUsuari($_SESSION['usuari']);
+        $cursos = $prof->totsCursosProf($dni);
+        require_once "views/professor/home.php";
     }
 
+    public function closeSession()
+    {
+        session_destroy();
+        header("Location: index.php");
+    }
 
 
 

@@ -105,3 +105,12 @@ table, th, td, tr {
     border-collapse: collapse;
     
 }
+
+.totsCursos{
+    margin-top: 2%;
+    color: rgb(223, 221, 221);
+}
+
+.totsCursos:hover, .posarNota {
+  color: rgba(235, 236, 236, 0.63);
+}
