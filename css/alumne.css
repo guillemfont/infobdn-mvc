@@ -1,0 +1,98 @@
+.enllaç, .enllaç2 {
+  text-align: center;
+}
+
+.curs {
+    padding-top: 20px;
+    display: grid; 
+    border: 1px solid #dcf4fa;
+    border-radius: 5%;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "imatge imatge"
+      "nom-curs nom"
+      "descripcio-curs desc"
+      "nom-prof profnom"
+      "data-inici inici"
+      "data-final final"
+      "hores-totals totals"
+      "enllaç enllaç" 
+      "enllaç2 enllaç2"; 
+  }
+  .nom-curs { grid-area: nom-curs; }
+  .descripcio-curs { grid-area: descripcio-curs; }
+  .nom-prof { grid-area: nom-prof; }
+  .data-inici { grid-area: data-inici; }
+  .data-final { grid-area: data-final; }
+  .hores-totals { grid-area: hores-totals; }
+  .nom { grid-area: nom; }
+  .desc { grid-area: desc; }
+  .profnom { grid-area: profnom; }
+  .inici { grid-area: inici; }
+  .final { grid-area: final; }
+  .totals { grid-area: totals; }
+  .imatge { grid-area: imatge; } 
+  .imatge { grid-area: imatge; } 
+  .enllaç { grid-area: enllaç; } 
+  .enllaç2 { grid-area: enllaç2; } 
+
+  /* .curs, .curs div {
+    border: 1px solid white;
+    border-collapse: collapse;
+  } */
+
+img {
+    width: 20%;
+}
+
+.cursos{
+  border: 1px solid #dcf4fa;
+  margin: 10px 0;
+  border-radius: 5%;
+}
+
+.cursos .nom {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+#imatge{
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 60%;
+  border: 1px solid #dcf4fa;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5%;
+  background-color: rgba(235, 236, 236, 0.137);
+  color: rgb(223, 221, 221);
+}
+
+.curs div {
+  padding: 5px;
+}
+
+.nom-curs, .descripcio-curs, .nom-prof, .data-inici, .data-final, .hores-totals{
+  font-weight: bold;
+  margin-left: 20%;
+}
+
+.curs a {
+  text-decoration: underline;
+}
+
+#seccioAlumne{
+  margin-top: 5%;
+  align-items: flex-start;
+}
+
+.notes:hover {
+  color: rgba(235, 236, 236, 0.63);
+
+}

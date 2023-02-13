@@ -1,0 +1,42 @@
+section {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 100px;
+}
+
+table {
+    width: 60%;
+    color: rgb(223, 221, 221);
+}
+
+table th, td {
+    width: 80px;
+}
+
+td {
+    font-size: 18px;
+    text-align: center;
+}
+
+th {
+    font-size: 22px;
+}
+
+h1 {
+    margin-bottom: 2%;
+    color: rgb(223, 221, 221);
+}
+
+.totsCursos{
+    margin-top: 2%;
+    color: rgb(223, 221, 221);
+}
+
+.totsCursos:hover, .posarNota {
+  color: rgba(235, 236, 236, 0.63);
+}
+
