@@ -2,7 +2,7 @@
 class Alumne
 {
 
-    private $connexio = mysqli_connect("localhost", "root", "", "infobdn");
+    private $connexio;
     private $userDNI;
     private $userName;
     private $userLastName;
@@ -15,6 +15,7 @@ class Alumne
     //Constructor
     public function __construct($email = null, $name = null, $lastname = null, $age = null, $photo = null, $DNI = null, $password = null)
     {
+        $this->connexio = mysqli_connect("localhost", "root", "", "infobdn");
         $this->email = $email;
         $this->userName = $name;
         $this->userLastName = $lastname;
