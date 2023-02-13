@@ -8,18 +8,18 @@ class Professor
     private $userLastName;
     private $email;
     private $password;
-    private $age;
+    private $titol;
     private $photo;
 
 
     //Constructor
-    public function __construct($email = null, $name = null, $lastname = null, $age = null, $photo = null, $DNI = null, $password = null)
+    public function __construct($email = null, $name = null, $lastname = null, $titol = null, $photo = null, $DNI = null, $password = null)
     {
         $this->connexio = mysqli_connect("localhost", "root", "", "infobdn");
         $this->email = $email;
         $this->userName = $name;
         $this->userLastName = $lastname;
-        $this->age = $age;
+        $this->titol = $titol;
         $this->photo = $photo;
         $this->userDNI = $DNI;
         $this->password = $password;

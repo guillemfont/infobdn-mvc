@@ -7,13 +7,13 @@
         <div class="lista">
 
             <li>
-                <ul><a href="home-admin.php"><i class="fa-solid fa-house-user"></i></a></ul>
+                <ul><a href="#"><i class="fa-solid fa-house-user"></i></a></ul>
             </li>
             <li>
                 <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
             </li>
             <li>
-                <ul><a href="../sortir.php"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
+                <ul><a href="#"><i class="fa-solid fa-right-from-bracket"></i></a></ul>
             </li>
         </div>
     </nav>
@@ -26,9 +26,9 @@
 
 
     <section>
-        <form class="contingut" action="valid-admin.php" method="post">
+        <form class="contingut" action="index.php?controller=admin" method="post">
 
-            <img src="img/logo.png" alt="LOGO INFOBDN" srcset="">
+            <img src="assets/img/logo.png" alt="LOGO INFOBDN" srcset="">
 
             <input type="text" name="usuari" id="usuari" placeholder="Nom d'usuari" required>
             <input type="password" name="contrasenya" id="contrasenya" placeholder="Contrasenya" required>

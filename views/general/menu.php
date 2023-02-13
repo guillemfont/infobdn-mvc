@@ -2,7 +2,7 @@
 
 <nav>
                     
-        <img src="img/logo2.png" alt="LOGO INFO BDN" srcset="">
+        <img src="assets/img/logo2.png" alt="LOGO INFO BDN" srcset="">
 
         <div class="lista">
 
@@ -28,7 +28,7 @@
   
         <form class="contingut" action="index.php?controller=alumne&action=Singin" method="post">
     
-            <img src="img/logo.png" alt="LOGO INFOBDN" srcset="">
+            <img src="assets/img/logo.png" alt="LOGO INFOBDN" srcset="">
 
              <select name="rang" id="rang">
                  <option value="alumne" required require>Alumne</option>
