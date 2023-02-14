@@ -5,10 +5,10 @@
 <div class="lista">
 
     <li>
-        <ul><a href="notes-alumne.php"><i class="fa-solid fa-book"></i></a></ul>
+        <ul><a href="index.php?controller=alumne&action=shownotas"><i class="fa-solid fa-book"></i></a></ul>
     </li>
     <li>
-        <ul><a href="home-alumne.php"><i class="fa-solid fa-house-user"></i></a></ul>
+        <ul><a href="index.php?controller=alumne&action=showhome"><i class="fa-solid fa-house-user"></i></a></ul>
     </li>
     <li>
         <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>

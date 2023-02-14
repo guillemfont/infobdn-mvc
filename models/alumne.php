@@ -45,18 +45,18 @@ class Alumne
     }
 
     function dniUsuari($nom)
-{
-    $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
-    $sql = "SELECT * from alumnes WHERE email = '$nom'";
-    $resultat = mysqli_query($connexio, $sql);
+    {
+        $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
+        $sql = "SELECT * from alumnes WHERE email = '$nom'";
+        $resultat = mysqli_query($connexio, $sql);
 
-    while ($mostrar = mysqli_fetch_array($resultat)) {
-        $dni = $mostrar['dni'];
+        while ($mostrar = mysqli_fetch_array($resultat)) {
+            $dni = $mostrar['dni'];
+        }
+
+
+        return $dni;
     }
-
-
-    return $dni;
-}
 
     function showCourses()
     {
@@ -91,7 +91,7 @@ class Alumne
                     <div class="enllaç"><a style="text-decoration: underline;" href="curs-alumne.php?codi=' . $curs['codi'] . '>Veure complet</a></div>
                     <div class="enllaç"><a onclick="return desmatricular()" style="text-decoration: underline;" href="desmatricular-alumne.php?email=' . $_SESSION['usuari'] . '&codi=' . $curs['codi'] . '">Desmatricular-me</a></div>
                 </div>
-                <a href="notes-alumne.php"><span class="notes">Les meves notes</span> </a>';
+                <a href="index.php?controller=alumne&action=shownotas"><span class="notes">Les meves notes</span> </a>';
                 }
             } else {
                 echo '<br/>';
@@ -102,44 +102,43 @@ class Alumne
 
 
     function cursosDisponibles()
-{
-    $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
-    $dni = $this->dniUsuari($_SESSION['usuari']);
-    $dataAvui = date('Y-m-d');
-    $sql = "SELECT * FROM cursos WHERE actiu = 1 AND data_inici>'$dataAvui' AND codi NOT IN (SELECT codi_curs FROM matricula WHERE dni_alumne = '$dni' )";
+    {
+        $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
+        $dni = $this->dniUsuari($_SESSION['usuari']);
+        $dataAvui = date('Y-m-d');
+        $sql = "SELECT * FROM cursos WHERE actiu = 1 AND data_inici>'$dataAvui' AND codi NOT IN (SELECT codi_curs FROM matricula WHERE dni_alumne = '$dni' )";
 
-    $consulta = mysqli_query($connexio, $sql);
+        $consulta = mysqli_query($connexio, $sql);
 
-    if ($consulta) {
+        if ($consulta) {
 
-        $numLinies = mysqli_num_rows($consulta);
-        if ($numLinies != 0) {
+            $numLinies = mysqli_num_rows($consulta);
+            if ($numLinies != 0) {
 
 
-            for ($i = 0; $i < $numLinies; $i++) {
-                $curs = mysqli_fetch_assoc($consulta);
-                
-                
-                return '<div style="margin: 10px 0; border: 1px solid #dcf4fa; border-radius: 8%;">
+                for ($i = 0; $i < $numLinies; $i++) {
+                    $curs = mysqli_fetch_assoc($consulta);
+
+
+                    return '<div style="margin: 10px 0; border: 1px solid #dcf4fa; border-radius: 8%;">
                     <ul>
-                        <li style="font-weight:bold">'.$curs['nom'].'</li>
-                        <li><img src="data:image/jpg;base64,'.$curs['fotografia'].'" /></li>
-                        <li><a style="text-decoration: underline" href="matricula-alumne.php?curs='.$curs['codi'].'">Matricular-me</a></li>
+                        <li style="font-weight:bold">' . $curs['nom'] . '</li>
+                        <li><img src="data:image/jpg;base64,' . $curs['fotografia'] . '" /></li>
+                        <li><a style="text-decoration: underline" href="matricula-alumne.php?curs=' . $curs['codi'] . '">Matricular-me</a></li>
                     </ul>
                 </div>';
-
+                }
+            } else {
+                echo '<br/>';
+                echo 'Actualment no hi han cursos disponibles.';
             }
         } else {
-            echo '<br/>';
-            echo 'Actualment no hi han cursos disponibles.';
+            echo mysqli_error($connexio);
+            echo "Alguna cosa no funciona correctament";
         }
-    } else {
-        echo mysqli_error($connexio);
-        echo "Alguna cosa no funciona correctament";
     }
-}
 
-public function checkProf($user, $pass)
+    public function checkProf($user, $pass)
     {
         $consulta = "SELECT * FROM professors WHERE email = '$user' and contrasenya = md5('$pass')";
         $resultat = mysqli_query($this->connexio, $consulta);
@@ -155,5 +154,17 @@ public function checkProf($user, $pass)
 
         mysqli_free_result($resultat);
         mysqli_close($this->connexio);
+    }
+
+    function nomProfessor($codiCurs)
+    {
+
+        $connexio = mysqli_connect("localhost", "root", "", "infobdn"); // Connexió amb la BBDD
+        $consulta = mysqli_query($connexio, "SELECT nom_professor FROM cursos WHERE codi = '$codiCurs'");
+        $dniProf = mysqli_fetch_array($consulta)[0];
+
+        $nom = mysqli_query($connexio, "SELECT nom FROM professors WHERE dni = '$dniProf'");
+        $cognom = mysqli_query($connexio, "SELECT cognoms FROM professors WHERE dni = '$dniProf'");
+        return mysqli_fetch_array($nom)[0] . " " . mysqli_fetch_array($cognom)[0];
     }
 }

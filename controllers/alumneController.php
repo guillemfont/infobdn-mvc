@@ -44,4 +44,8 @@ class AlumneController
         session_destroy();
         header("location: index.php");
     }
+
+    public function showNotas() {
+        require_once "views/alumne/notas.php";
+    }
 }

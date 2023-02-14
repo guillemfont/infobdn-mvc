@@ -7,13 +7,13 @@
         <div class="lista">
 
             <li>
-                <ul><a href="alumne/home-alumne.php"><i class="fa-solid fa-house-user"></i></a></ul>
+                <ul><a href="#"><i class="fa-solid fa-house-user"></i></a></ul>
             </li>
             <li>
                 <ul><a href="#"><i class="fa-brands fa-blogger"></i></a></ul>
             </li>
             <li>
-                <ul><a href="alumne/registre-alumne.php"><i class="fa-solid fa-user-plus"></i></i></a></ul>
+                <ul><a href="index.php?controller=alumne&action=showSingUp"><i class="fa-solid fa-user-plus"></i></i></a></ul>
             </li>
         </div>
     </nav>
