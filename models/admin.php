@@ -37,4 +37,20 @@ class Administrador
         mysqli_free_result($resultat);
         mysqli_close($connexio);
     }
+
+    function cursActiu($bandera, $codi)
+{
+
+    if ($bandera == 1) {
+    ?>
+        <a href="cursActiu-admin.php?actiu=1&codi=<?php echo $codi ?>"><i class="fa-solid fa-check"></i></a>
+    <?php
+    }
+    if ($bandera == 0) {
+    ?>
+        <a href="cursActiu-admin.php?actiu=0&codi=<?php echo $codi ?>"><i class="fa-solid fa-x"></i></a>
+<?php
+    }
+}
+
 }

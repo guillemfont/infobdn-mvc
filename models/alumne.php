@@ -118,16 +118,16 @@ class Alumne
 
             for ($i = 0; $i < $numLinies; $i++) {
                 $curs = mysqli_fetch_assoc($consulta);
-            ?>
-                <div style="margin: 10px 0; border: 1px solid #dcf4fa; border-radius: 8%;">
+                
+                
+                return '<div style="margin: 10px 0; border: 1px solid #dcf4fa; border-radius: 8%;">
                     <ul>
-                        <li style="font-weight:bold"><?php echo $curs['nom'] ?></li>
-                        <li><img src="data:image/jpg;base64,<?php echo base64_encode($curs['fotografia']); ?>" /></li>
-                        <li><a style="text-decoration: underline" href="matricula-alumne.php?curs=<?php echo $curs['codi'] ?>">Matricular-me</a></li>
+                        <li style="font-weight:bold">'.$curs['nom'].'</li>
+                        <li><img src="data:image/jpg;base64,'.$curs['fotografia'].'" /></li>
+                        <li><a style="text-decoration: underline" href="matricula-alumne.php?curs='.$curs['codi'].'">Matricular-me</a></li>
                     </ul>
-                </div>
+                </div>';
 
-<?php
             }
         } else {
             echo '<br/>';

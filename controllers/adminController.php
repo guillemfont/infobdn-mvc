@@ -26,4 +26,12 @@ class AdminController
         session_destroy();
         header("location: index.php");
     }
+    
+    public function showProf(){
+        require_once "views/admin/profadmin.php";
+    }
+
+    public function showCursos(){
+        require_once "views/admin/cursadmin.php";
+    }
 }
